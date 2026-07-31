@@ -22,7 +22,7 @@ app.get("/ruta3/:nombre/:apellido", (req, res) => {
   const apellido = req.params.apellido;
   res.json({"Usuario": nameUsuario, "apellido":apellido})
 })
-//ruta con patrametros de consulta query
+//ruta con parametros de consulta query
 app.get("/ruta4", (req, res) => {
   const numero = req.query.phone || 3337238408
   const orden = req.query.orden || "sin orden"
@@ -32,6 +32,16 @@ app.get("/ruta4", (req, res) => {
     <p>Pagina: ${pagina}</p>
     <h3>Numero: ${numero}</h3>
     `)
+})
+
+
+//1. Parámetro simple único
+app.get("/saludo/:nombre", (req, res) => {
+  res.status 
+  const nameUsuario = req.params.nombre || "Aprendiz"
+  res.send(`<h1>Hola, ${nameUsuario}, bienvenido </h1>
+    `)
+
 })
 
 app.listen(port, () => {
